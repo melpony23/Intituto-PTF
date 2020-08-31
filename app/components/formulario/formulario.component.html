@@ -1,0 +1,67 @@
+<div class="container" style="width: 50%; margin: 2em auto;">
+    <form [formGroup]="myForm" novalidate  class="mat-elevation-z4" style="padding: 1em;">
+        <h2 class="letra6" style="text-align: center;">¡Registrate aquí!</h2>
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label class="letra3">Nombre</mat-label>
+              <input input class="form-control" formControlName="nombre" matInput [(ngModel)]="nombre" name="nombre" matInput  placeholder="Tu nombre">
+            </mat-form-field>
+        </div> 
+        <div *ngIf="myForm.controls['nombre'].invalid && (myForm.controls['nombre'].dirty || myForm.controls['nombre'].touched)" class="alert alert-danger">
+          <div *ngIf="myForm.controls['nombre'].errors.required">
+            Nombre requerido!
+          </div>
+      </div>
+      <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label class="letra3">Apellido</mat-label>
+              <input input class="form-control" formControlName="apellido" matInput  [(ngModel)]="apellido" name="apellido" matInput placeholder="Tu apellido">
+            </mat-form-field>
+      </div>
+      <div *ngIf="myForm.controls['apellido'].invalid && (myForm.controls['apellido'].dirty || myForm.controls['apellido'].touched)" class="alert alert-danger">
+        <div *ngIf="myForm.controls['apellido'].errors.required">
+          Apellido requerido!
+        </div>
+      </div>
+      <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label class="letra3">Correo electrónico</mat-label>
+                <input input class="form-control" id="correo" required formControlName="correo" matInput [(ngModel)]="correo" name="correo" type="email" matInput placeholder="correo@ejemplo.com">
+              </mat-form-field>
+        </div>
+            
+            <div *ngIf="myForm.controls['correo'].invalid && (myForm.controls['correo'].dirty || myForm.controls['correo'].touched)" class="alert alert-danger">
+              <div *ngIf="myForm.controls['correo'].errors.required">
+                Correo requerido!
+              </div>
+            </div>
+
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label class="letra3">Contraseña</mat-label>
+                <input input class="form-control" formControlName="contrasena" matInput [(ngModel)]="contrasena" name="contrasena" type="text" minlength="4" maxlength="8" ngModel pattern="[A-Za-z][0-9][A-Za-z0-9]*" title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula,
+                 y una serie de digitos. La contraseña debe empezar con una letra y contener al menos un dígito. Largo minimo de 4 caracteres." matInput >
+                 <mat-hint>La contraseña debe empezar con una letra seguida de una serie de dígitos. Largo minimo de 4 caracteres</mat-hint>
+              </mat-form-field>
+            </div>
+              <div *ngIf="myForm.controls['contrasena'].invalid && (myForm.controls['contrasena'].dirty || myForm.controls['contrasena'].touched)" class="alert alert-danger">
+                <div *ngIf="myForm.controls['contrasena'].errors.required">
+                   Contraseña requerida!
+                </div> 
+                <div *ngIf="myForm.controls['contrasena'].invalid && (myForm.controls['contrasena'].dirty || myForm.controls['contrasena'].touched)" class="alert alert-danger">
+                  <div *ngIf="myForm.controls['contrasena'].errors.pattern">
+                     Contraseña invalida, verifica el patron
+                  </div> 
+               </div>
+               <div *ngIf="myForm.controls['contrasena'].invalid && (myForm.controls['contrasena'].dirty || myForm.controls['contrasena'].touched)" class="alert alert-danger">
+                    <div *ngIf="myForm.controls['contrasena'].errors.minlength">
+                       Contraseña debe tener largo minimo 4
+                </div>   
+            </div>
+            </div>
+              <br />
+              <button  mat-raised-button color="primary" style="margin-top: 1em; margin-left: 1em;" [disabled]="myForm.invalid" (click) ="agregar(nombre ,apellido ,correo, contrasena)">Enviar</button>
+              <button type="reset" mat-raised-button color="warn" style="margin-left: 1em; margin-top: 1em;" >Limpiar</button>
+    </form>
+
+</div>

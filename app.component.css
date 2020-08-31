@@ -1,0 +1,23 @@
+@font-face {
+    font-family: letra;
+    src: url(C:\Users\melan.DESKTOP-CILRIH9\OneDrive\Documentos\Angular2\Pagina\src\assets\AlburgoneDEMO.ttf)
+}
+@font-face {
+    font-family: letra2;
+    src: url(C:\Users\melan.DESKTOP-CILRIH9\OneDrive\Documentos\Angular2\Pagina\src\assets\letra4.ttf)
+}
+
+.main{
+    font-family: letra;
+    color:rgba(64, 64, 122, 0.562);
+
+}
+.imagen{
+    background-image: url(C:\Users\melan.DESKTOP-CILRIH9\OneDrive\Documentos\Angular2\Pagina\src\assets\azulgris.jpg);
+}
+.color{
+    background-color: rgb(129, 160, 218);
+}
+.letra2{
+    font-family: letra2;
+}

@@ -1,0 +1,28 @@
+<div style="width: 50%; margin: 2em auto;">
+  <form class="mat-elevation-z4" style="padding: 1em;">
+      <h2 class="letra6" style="text-align: center;">¡Edita tu usuario aqui!</h2>
+      <mat-form-field appearance="legacy">
+        <mat-label class="letra3">Nuevo nombre</mat-label>
+        <input matInput  [(ngModel)]="nombre" name="nombre" matInput required placeholder="Ingresa tu nuevo nombre">
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+          <mat-label class="letra3">Nuevo apellido</mat-label>
+          <input matInput [(ngModel)]="apellido" name="apellido" matInput required placeholder="Tu nuevo apellido">
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label class="letra3">Correo Registrado</mat-label>
+          <input matInput [(ngModel)]="correo" name="correo" matInput required placeholder="Tu correo registrado">
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label class="letra3">Nueva contraseña</mat-label>
+          <input matInput [(ngModel)]="contrasena" name="contrasena" type="text" minlength="4" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula,
+           y una serie de digitos. La contraseña debe empezar con una letra y contener al menos un dígito. Largo minimo de 4 caracteres." matInput required placeholder="Escribe tu nueva contraseña">
+           <mat-hint >La contraseña debe contener al menos una letra y una serie de digitos, debe ser de 4 caracteres minimo</mat-hint>
+        </mat-form-field>
+        <br />
+        <button type="submit" mat-raised-button color="primary" style="margin-top: 1em; margin-left: 1em;" (click) ="editar(nombre,apellido,correo,contrasena)">Enviar</button>
+        <button type="reset" mat-raised-button color="warn" style="margin-left: 1em; margin-top: 1em;" >Limpiar</button>
+</form>
+</div>
+    
+       

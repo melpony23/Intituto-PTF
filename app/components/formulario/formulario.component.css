@@ -1,0 +1,20 @@
+@font-face {
+    font-family: letra1;
+    src: url(C:\Users\melan.DESKTOP-CILRIH9\OneDrive\Documentos\Angular2\Pagina\src\assets\Appetizer.ttf)
+}
+@font-face {
+    font-family: letra2;
+    src: url(C:\Users\melan.DESKTOP-CILRIH9\OneDrive\Documentos\Angular2\Pagina\src\assets\letra4.ttf)
+}
+
+.letra6{
+    font-family: letra1;
+    font-size: 1.5cm;
+}
+
+.letra3{
+    font-family: letra2;
+}
+mat-form-field{
+    width: 100%;
+}
